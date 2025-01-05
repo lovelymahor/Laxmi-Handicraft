@@ -30,7 +30,7 @@ Laxmi Handicraft is designed to showcase and sell brass products, ensuring a mod
 ### 🚀 **How to Run the Project Locally**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/laxmi-handicraft.git
+   git clone https://github.com/lovelymahor/Laxmi-Handicraft.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -64,7 +64,7 @@ We welcome contributions to enhance the functionality and design of Laxmi Handic
 ### 📩 **Contact**
 For queries or collaborations, feel free to reach out at:
 - **Email:** your-email@example.com
-- **GitHub:** [Your GitHub Profile](https://github.com/yourusername)
+- **GitHub:** [Your GitHub Profile](https://github.com/lovelymahor)
 
 ---
 
