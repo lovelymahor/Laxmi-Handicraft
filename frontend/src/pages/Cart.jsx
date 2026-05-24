@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import { FaTrash } from "react-icons/fa";
-import CartTotal from '../components/CartTotal'; // ✅ CORRECT
-import Title from '../components/Title'; // ✅ CORRECT
+import CartTotal from '../components/CartTotal'; 
+import Title from '../components/Title'; 
 
 const Cart = () => {
-  const { products, cartItems, updateQuantity } = useContext(ShopContext);
+  const { products, cartItems, updateQuantity, navigate } = useContext(ShopContext);
 
   return (
     <div className="p-6">
@@ -71,8 +71,7 @@ const Cart = () => {
                     />
                     <button
                       onClick={() => updateQuantity(product.id, sizeLabel, 0)}
-                      className="text-red-500 hover:text-red-700 flex items-center gap-1"
-                    >
+                      className="text-gray-500 hover:text-gray-700 flex items-center gap-1">
                       <FaTrash /> Remove
                     </button>
                   </div>
@@ -84,6 +83,11 @@ const Cart = () => {
         <div className=" flex justify-end my-20">
           <div className="w-full sm:w-[450px]">
             <CartTotal />
+            <div className="w-full text-end">
+              <button onClick={()=>navigate('/place-order')}className="bg-orange-500 text-white my-8 px-8 py-3 text-sm rounded hover:bg-orange-600 transition-colors cursor-pointer">
+                PROCEED TO CHECKOUT
+              </button>
+              </div>
           </div>
 
         </div>

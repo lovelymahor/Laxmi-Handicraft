@@ -13,7 +13,7 @@ const Navbar = () => {
     const {setShowSearch, getCartCount} = useContext(ShopContext);
     return (
         <div className="flex items-center justify-between py-5 px-4 font-medium">
-            <h1 className="w-36 text-2xl font-bold text-gray-800">Laxmi - Handicraft</h1>
+            <h1 className="w-36 text-2xl font-bold text-gray-800">E-commerce</h1>
 
             <ul className="hidden sm:flex gap-5 text-sm text-gray-700 list-none">
                 <NavLink to='/' className="flex flex-col items-center gap-1">
@@ -41,7 +41,7 @@ const Navbar = () => {
            </div>
             <div className="flex items-center gap-4">
                 <div className='group relative'>
-                    <img className='w-5 cursor-pointer' src={profileIcon} alt="Profile" />
+                    <Link to='/login'><img className='w-5 cursor-pointer' src={profileIcon} alt="Profile" /></Link>
                     <div className='group-hover:block bg-white shadow-lg rounded-md p-4 hidden absolute dropdown-menu right-0 pt-4'>
                         <div className='flex flex-col gap-2 w-36 py-3 px-5 pg-slat-100 text-gray-500 rounded'>
                             <p className='cursor-pointer hover:text-black'>My Profile</p>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 </div>
                 <Link to='/cart' className='relative'>
                     <img src={cartIcon} className='w-5 min-w-5 cursor-pointer' />
-                    <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
+                    <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>getCartCount</p>
                 </Link>
                 <img onClick={()=>setVisible(true)} src={menuIcon} className='w-6 cursor-pointer block sm:hidden' />
             </div>

@@ -25,6 +25,8 @@ import deleteIcon from './Delete_icon.png';
 import homeImg from './hp.jpg';
 import PrivacyPolicy from './PrivacyPolicyIcons.png';
 import ReturnIcon from './ReturnIcons.png';
+import RazorpayIcon from './razorpay_icon.png';
+import StripIcon from './stripe_icon.png';
 
 export const assets = {
     img1,
@@ -52,7 +54,8 @@ export const assets = {
     homeImg,
     PrivacyPolicy,
     ReturnIcon,
-
+    RazorpayIcon, 
+    StripIcon,
 }
 
 export const products = [

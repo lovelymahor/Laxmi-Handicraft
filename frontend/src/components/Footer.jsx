@@ -5,7 +5,7 @@ const Footer = () => {
     <>
       <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
         <div className='flex flex-col gap-4'>
-          <h1 className='text-2xl font-semibold'>Laxmi - Handicraft</h1>
+          <h1 className='text-2xl font-semibold'>E-commerce </h1>
           <p className='w-full md:w-2/3 text-gray-600'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
           </p>

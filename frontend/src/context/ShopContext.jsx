@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { products as productsData } from '../assets/assets'; 
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export const ShopContext = createContext();
 
@@ -10,6 +11,7 @@ export const ShopContextProvider = (props) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
+    const navigate = useNavigate();
 
 const addToCart = async (itemId, sizeObj) => {
   if (!sizeObj || !sizeObj.label) {
@@ -69,21 +71,22 @@ const updateQuantity = async (itemId, sizeLabel, quantity) => {
   setCartItems(cartData);
 };
 
+
 const getCartAmount = () => {
-    let totalAmount = 0;
-    for (const itemId in cartItems) {
-        let itemInfo = productsData.find(item => item.id === Number(itemId));
-        for (const item in cartItems[itemId]){
-            try{
-                if (cartItems[itemId][item] > 0) {
-                    totalAmount += itemInfo.price * cartItems[itemId][item];
-                }
-            } catch (error) {
-            }
-        }
+  let totalAmount = 0;
+
+  for (const itemId in cartItems) {
+    for (const sizeLabel in cartItems[itemId]) {
+      const entry = cartItems[itemId][sizeLabel];
+      if (entry && entry.quantity > 0 && entry.sizeDetails?.price) {
+        totalAmount += entry.sizeDetails.price * entry.quantity;
+      }
     }
-    return totalAmount; 
-}
+  }
+
+  return totalAmount;
+};
+
 
     const value = {
         products: productsData,
@@ -98,6 +101,7 @@ const getCartAmount = () => {
         getCartCount,
         updateQuantity,
         getCartAmount,
+        navigate, 
     };
 
     return (
